@@ -11,7 +11,6 @@ import sk.jaroslavbeno.springlearn2code.services.MovieService;
 public class AppRun {
 
     @Autowired
-    @Qualifier("ENGlishHelloWorld")
     HelloWorldService helloWorldService;
 
 
