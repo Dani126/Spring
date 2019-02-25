@@ -1,25 +1,30 @@
 package sk.jaroslavbeno.springlearn2code;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
+import sk.jaroslavbeno.springlearn2code.services.HelloWorldService;
 import sk.jaroslavbeno.springlearn2code.services.MovieService;
 
 @Component
 public class AppRun {
 
-    MovieService movieService;
-//
-//    public AppRun(MovieService movieService) {
-//        this.movieService = movieService;
+    @Autowired
+    @Qualifier("ENGlishHelloWorld")
+    HelloWorldService helloWorldService;
+
+
+//    public AppRun(@Qualifier("slovakHelloWorld") HelloWorldService helloWorldService) {
+//        this.helloWorldService = helloWorldService;
 //    }
 
     public void run(){
-        movieService.createAndAddMovie();
+        helloWorldService.sayHello();
     }
 
-    @Autowired
-    public void setMovieService(MovieService movieService) {
-        System.out.println("injectujem cez setter");
-        this.movieService = movieService;
-    }
+//    @Qualifier("slovakHelloWorld")
+//    public void setHelloWorldService(@Qualifier("slovakHelloWorld") HelloWorldService helloWorldService) {
+//        this.helloWorldService = helloWorldService;
+//    }
 }
