@@ -9,7 +9,11 @@ import sk.jaroslavbeno.springlearn2code.repositories.impl.MovieServiceImpl;
 public class SpringLearn2codeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringLearn2codeApplication.class, args);
+		ApplicationContext context =
+				SpringApplication.run(SpringLearn2codeApplication.class, args);
+		AppRun appRun = context.getBean(AppRun.class);
+		appRun.run();
+
 	}
 
 }
