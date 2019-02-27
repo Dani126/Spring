@@ -8,10 +8,7 @@ import org.springframework.context.ApplicationContext;
 public class SpringLearn2codeApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context =
-				SpringApplication.run(SpringLearn2codeApplication.class, args);
-		AppRun appRun = context.getBean(AppRun.class);
-		appRun.run();
+		SpringApplication.run(SpringLearn2codeApplication.class, args);
 
 	}
 
