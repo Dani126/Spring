@@ -10,7 +10,7 @@ import sk.jaroslavbeno.springlearn2code.services.MovieService;
 @Component
 public class AppRun {
 
-    @Autowired
+
     HelloWorldService helloWorldService;
 
 
