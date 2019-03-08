@@ -1,16 +1,15 @@
 package sk.jaroslavbeno.springlearn2code;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
-import sk.jaroslavbeno.springlearn2code.services.HelloWorldService;
-import sk.jaroslavbeno.springlearn2code.services.MovieService;
+import sk.jaroslavbeno.services.HelloWorldService;
+import sk.jaroslavbeno.springlearn2code.repositories.MovieRepository;
 
 @Component
 public class AppRun {
 
 
+    @Autowired
     HelloWorldService helloWorldService;
 
 

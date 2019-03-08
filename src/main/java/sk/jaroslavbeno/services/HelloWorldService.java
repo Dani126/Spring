@@ -1,4 +1,4 @@
-package sk.jaroslavbeno.springlearn2code.services;
+package sk.jaroslavbeno.services;
 
 public interface HelloWorldService {
     void sayHello();

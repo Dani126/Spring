@@ -3,7 +3,7 @@ package sk.jaroslavbeno.springlearn2code.init;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import sk.jaroslavbeno.springlearn2code.services.MovieService;
+import sk.jaroslavbeno.services.MovieService;
 
 @Component
 public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
