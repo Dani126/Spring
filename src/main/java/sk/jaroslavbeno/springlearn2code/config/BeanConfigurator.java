@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import sk.biblia.BibleVerses;
 
-@Configuration
+//@Configuration
 public class BeanConfigurator {
 
-    @Bean
+//    @Bean
     public BibleVerses getBibleVerses(){
         return new BibleVerses();
     }
