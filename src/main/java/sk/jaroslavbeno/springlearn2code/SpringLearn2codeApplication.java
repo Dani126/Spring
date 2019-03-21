@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import sk.biblia.BibleVerses;
 import sk.jaroslavbeno.springlearn2code.services.HelloWorldService;
+import sk.jaroslavbeno.springlearn2code.services.impl.PrintService;
 
 @SpringBootApplication
 @ImportResource("classpath:bean-configurator.xml")
@@ -14,7 +15,7 @@ public class SpringLearn2codeApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext kontext = SpringApplication.run(SpringLearn2codeApplication.class, args);
-		kontext.getBean(HelloWorldService.class).sayHello();
+		kontext.getBean(PrintService.class).print();
 	}
 
 }
