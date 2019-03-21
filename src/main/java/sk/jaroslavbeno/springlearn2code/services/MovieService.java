@@ -1,4 +1,4 @@
-package sk.jaroslavbeno.services;
+package sk.jaroslavbeno.springlearn2code.services;
 
 import sk.jaroslavbeno.springlearn2code.model.Movie;
 

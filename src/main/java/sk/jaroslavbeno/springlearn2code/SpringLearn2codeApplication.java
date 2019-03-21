@@ -6,16 +6,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import sk.biblia.BibleVerses;
+import sk.jaroslavbeno.springlearn2code.services.HelloWorldService;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"sk.jaroslavbeno.services","sk.jaroslavbeno.springlearn2code"})
 @ImportResource("classpath:bean-configurator.xml")
 public class SpringLearn2codeApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext kontext = SpringApplication.run(SpringLearn2codeApplication.class, args);
-		String vers = kontext.getBean(BibleVerses.class).getVers();
-		System.out.println(vers);
+		kontext.getBean(HelloWorldService.class).sayHello();
 	}
 
 }

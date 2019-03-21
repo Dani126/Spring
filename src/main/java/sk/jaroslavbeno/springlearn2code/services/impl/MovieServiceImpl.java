@@ -1,9 +1,9 @@
-package sk.jaroslavbeno.services.impl;
+package sk.jaroslavbeno.springlearn2code.services.impl;
 
 import org.springframework.stereotype.Service;
 import sk.jaroslavbeno.springlearn2code.model.Movie;
 import sk.jaroslavbeno.springlearn2code.repositories.MovieRepository;
-import sk.jaroslavbeno.services.MovieService;
+import sk.jaroslavbeno.springlearn2code.services.MovieService;
 
 @Service
 public class MovieServiceImpl implements MovieService {

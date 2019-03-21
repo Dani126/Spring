@@ -2,8 +2,7 @@ package sk.jaroslavbeno.springlearn2code;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sk.jaroslavbeno.services.HelloWorldService;
-import sk.jaroslavbeno.springlearn2code.repositories.MovieRepository;
+import sk.jaroslavbeno.springlearn2code.services.HelloWorldService;
 
 @Component
 public class AppRun {
