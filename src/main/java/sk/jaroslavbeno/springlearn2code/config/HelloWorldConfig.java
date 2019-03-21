@@ -29,7 +29,7 @@ public class HelloWorldConfig {
     }
 
     @Bean
-    @Profile({"sk","default"})
+    @Profile({"svk","default"})
     public HelloWorldService svkHelloWorld(HelloWorldServiceFactory factory){
         return factory.createHelloWorldService("svk");
     }
