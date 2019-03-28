@@ -4,7 +4,7 @@ public class PrintService {
     private String data;
 
     public void print(){
-        System.out.println(data);
+        System.out.println(data + " reload 22");
     }
 
     public String getData() {
