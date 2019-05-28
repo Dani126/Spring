@@ -12,7 +12,7 @@ public class Movie {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    public String name;
 
     @ManyToMany
     @JoinTable(name = "movie_director",

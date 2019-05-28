@@ -10,6 +10,7 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
 
     MovieService movieService;
 
+
     public DataInit(MovieService movieService) {
         this.movieService = movieService;
     }
@@ -18,5 +19,7 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
         movieService.createAndAddMovie();
         movieService.createAndAddMovie();
+
+
     }
 }
