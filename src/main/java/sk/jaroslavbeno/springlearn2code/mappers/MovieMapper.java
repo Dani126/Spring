@@ -12,4 +12,7 @@ public interface MovieMapper {
 
     @Mapping(target = "directorsOfTheMovie", source = "directors")
     MovieDTO movieToMovieDto(Movie movie);
+
+    @Mapping(target = "directors", source = "directorsOfTheMovie")
+    Movie movieDtoToMovie(MovieDTO movieDTO);
 }

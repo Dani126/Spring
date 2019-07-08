@@ -31,6 +31,15 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
+    public Movie createAndAddMovie2() {
+
+        Movie movie = new Movie();
+        movie.setName("Quest");
+
+        return movieRepository.save(movie);
+    }
+
+    @Override
     public MovieDTO getMovieById(Long id) {
         return movieMapper.movieToMovieDto(
                 movieRepository.findById(id).orElse(null));
@@ -48,6 +57,34 @@ public class MovieServiceImpl implements MovieService {
         return movieRepository.findByName(name).stream()
                         .map(movieMapper::movieToMovieDto)
                         .collect(Collectors.toList());
+    }
+
+    @Override
+    public MovieDTO addMovie(MovieDTO movieDTO) {
+        return movieMapper.movieToMovieDto(
+                movieRepository.save(movieMapper.movieDtoToMovie(movieDTO))
+        );
+    }
+
+    @Override
+    public MovieDTO updateMovie(MovieDTO movieDTO, long movieId) {
+        return movieMapper.movieToMovieDto(movieRepository.findById(movieId)
+                .map(movie ->{
+                        movie.setName(movieDTO.getName());
+                        movie.setDirectors(movieDTO.getDirectorsOfTheMovie());
+                        return movieRepository.save(movie);
+                    }
+                ).orElseGet( () -> {
+//                    movieDTO.setId(movieId);
+                    return movieRepository.save(movieMapper.movieDtoToMovie(movieDTO));
+                    }
+                )
+        );
+    }
+
+    @Override
+    public void deleteMovie(long id) {
+        movieRepository.deleteById(id);
     }
 
 }

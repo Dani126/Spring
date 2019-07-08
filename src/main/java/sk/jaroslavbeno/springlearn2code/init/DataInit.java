@@ -19,6 +19,7 @@ public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
     public void onApplicationEvent(ContextRefreshedEvent event) {
         movieService.createAndAddMovie();
         movieService.createAndAddMovie();
+        movieService.createAndAddMovie2();
 
 
     }

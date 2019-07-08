@@ -1,9 +1,8 @@
 package sk.jaroslavbeno.springlearn2code.restapi;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sk.jaroslavbeno.springlearn2code.model.Movie;
+import sk.jaroslavbeno.springlearn2code.model.dto.MovieDTO;
 import sk.jaroslavbeno.springlearn2code.repositories.MovieRepository;
 import sk.jaroslavbeno.springlearn2code.services.MovieService;
 
@@ -13,16 +12,40 @@ import java.util.List;
 @RequestMapping("/api")
 public class MovieRestController {
 
-    MovieRepository movieRepository;
+    MovieService movieService;
 
-    public MovieRestController(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
+    public MovieRestController(MovieService movieService) {
+        this.movieService = movieService;
     }
 
     @GetMapping("/movies")
-    List<Movie> all(){
-        return movieRepository.findAll();
+    List<MovieDTO> getMovies(@RequestParam(required = false) String name){
+
+        if(name!=null && !name.isEmpty()){
+            return movieService.findMovieByName(name);
+        }else {
+            return movieService.getAllMovies();
+        }
     }
 
+    @GetMapping("/movies/{id}")
+    MovieDTO getMovieById(@PathVariable("id") long movieId){
+        return movieService.getMovieById(movieId);
+    }
+
+    @PostMapping("/movies")
+    MovieDTO addMovie(@RequestBody MovieDTO movieDTO){
+        return movieService.addMovie(movieDTO);
+    }
+
+    @PutMapping("/movies/{id}")
+    MovieDTO updateMovie(@RequestBody MovieDTO movieDTO, @PathVariable("id") long movieId){
+        return movieService.updateMovie(movieDTO, movieId);
+    }
+
+    @DeleteMapping("movies/{id}")
+    void deleteMovie(@PathVariable long id){
+        movieService.deleteMovie(id);
+    }
 
 }
