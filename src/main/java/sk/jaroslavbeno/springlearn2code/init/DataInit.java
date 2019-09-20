@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import sk.jaroslavbeno.springlearn2code.services.MovieService;
 
 @Component
+//Spring kontajner
 public class DataInit implements ApplicationListener<ContextRefreshedEvent> {
 
     MovieService movieService;

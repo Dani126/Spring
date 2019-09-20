@@ -6,6 +6,7 @@ import sk.jaroslavbeno.springlearn2code.repositories.MovieRepository;
 import sk.jaroslavbeno.springlearn2code.services.MovieService;
 
 @Service
+//patri do spring kontajneru
 public class MovieServiceImpl implements MovieService {
 
     MovieRepository movieRepository;
